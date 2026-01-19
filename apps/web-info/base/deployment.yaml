@@ -17,15 +17,9 @@ spec:
         image: nginx:alpine
         ports:
         - containerPort: 80
-    spec:
-      containers:
-      - name: web-info
-        image: nginx:alpine
-        ports:
-        - containerPort: 80
         volumeMounts:
         - name: html-volume
-          mountPath: /usr/share/nginx/html # Chemin où Nginx cherche ses fichiers
+          mountPath: /usr/share/nginx/html
       volumes:
       - name: html-volume
         configMap:
