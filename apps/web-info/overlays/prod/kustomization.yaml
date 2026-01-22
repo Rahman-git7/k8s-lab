@@ -25,4 +25,4 @@ patches:
       # 2. On branche le middleware (Attention à la syntaxe ~1 pour le slash dans l'annotation)
       - op: add
         path: /metadata/annotations/traefik.ingress.kubernetes.io~1router.middlewares
-        value: default-strip-prod-prefix@kubernetescrd
+        value: default-prod-strip-prod-prefix@kubernetescrd
