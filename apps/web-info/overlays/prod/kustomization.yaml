@@ -14,15 +14,3 @@ patches:
       - op: replace
         path: /spec/replicas
         value: 3
-  - target:
-      kind: Ingress
-      name: web-info-ingress
-    patch: |-
-      # 1. On garde le chemin /prod
-      - op: replace
-        path: /spec/rules/0/http/paths/0/path
-        value: /prod
-      # 2. On branche le middleware (Attention à la syntaxe ~1 pour le slash dans l'annotation)
-      - op: add
-        path: /metadata/annotations/traefik.ingress.kubernetes.io~1router.middlewares
-        value: default-prod-strip-prod-prefix@kubernetescrd
